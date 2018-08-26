@@ -1,9 +1,7 @@
 ﻿using BraviChessReact.Controllers;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 
 namespace BraviChessReact.TestMSTest.Controllers
 {
@@ -17,7 +15,7 @@ namespace BraviChessReact.TestMSTest.Controllers
             var controller = new KnightMovementController();
 
             // Act
-            var result = controller.Get("A1");
+            var result = controller.Teste("A1").ToList();
 
             // Assert
             result.Count.Should().Be(2);
@@ -32,7 +30,7 @@ namespace BraviChessReact.TestMSTest.Controllers
             var controller = new KnightMovementController();
 
             // Act
-            var result = controller.Get("E4");
+            var result = controller.Teste("E4").ToList();
            
             // Assert
             result.Count.Should().Be(8);
@@ -53,7 +51,7 @@ namespace BraviChessReact.TestMSTest.Controllers
             var controller = new KnightMovementController();
 
             // Act
-            var result = controller.Get("C8");
+            var result = controller.Teste("C8").ToList();
 
             // Assert
             result.Count.Should().Be(4);

@@ -9,6 +9,7 @@ export class Counter extends Component {
     this.state = { currentCount: 0 };
     this.incrementCounter = this.incrementCounter.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.positionMarked = {};
   }
 
   incrementCounter() {
@@ -18,21 +19,26 @@ export class Counter extends Component {
   }
 
   handleClick(e) {
-    fetch('api/SampleData/WeatherForecasts')
+    for (let i = 0; i < this.positionMarked.length; i++) {
+      document.getElementById(this.positionMarked[i]).style.color = "black";
+    }
+
+    fetch('api/KnightMovement/Teste?position=' + e.target.getAttribute('id'))
       .then(response => response.json())
       .then(data => {
         this.setState({ forecasts: data, loading: false });
+        for (let i = 0; i < data.length; i++) {
+          document.getElementById(data[i]).style.color = "red";
+        }
+        this.positionMarked = data;
       });
-      var id = e.target.getAttribute('id');
-     
-      document.getElementById('G5').style.color = "red";
-  } 
+  }
 
   render() {
     return (
       <div>
         <h1>Bravi Chess</h1>
-        <div className="chessboard"> 
+        <div className="chessboard">
           <div className="white" id="A8" onClick={e => this.handleClick(e)}>A8</div>
           <div className="black" id="B8" onClick={e => this.handleClick(e)}>B8</div>
           <div className="white" id="C8" onClick={e => this.handleClick(e)}>C8</div>

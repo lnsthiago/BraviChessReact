@@ -1,12 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BraviChessReact.Controllers
 {
+    [Route("api/[controller]")]
     public class KnightMovementController : Controller
     {
-        public List<string> Get(string position)
+        [HttpGet("[action]")]
+        public IEnumerable<string> Teste(string position)
         {
             if (position == null)
                 return null;
