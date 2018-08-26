@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router';
 import { Layout } from './components/Layout';
-import { Home } from './components/Home';
-import { Counter } from './components/Counter';
+import { Help } from './components/Help';
+import { Chessboard } from './components/Chessboard';
 
 export default class App extends Component {
   displayName = App.name
@@ -10,8 +10,8 @@ export default class App extends Component {
   render() {
     return (
       <Layout>
-        <Route exact path='/' component={Home} />
-        <Route path='/counter' component={Counter} />
+        <Route path='/chessboard' component={Chessboard} />
+        <Route path='/help' component={Help} />
       </Layout>
     );
   }
