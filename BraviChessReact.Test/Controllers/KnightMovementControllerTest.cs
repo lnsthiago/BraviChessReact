@@ -15,7 +15,7 @@ namespace BraviChessReact.TestMSTest.Controllers
             var controller = new KnightMovementController();
 
             // Act
-            var result = controller.Teste("A1").ToList();
+            var result = controller.GetKnightMoves("A1").ToList();
 
             // Assert
             result.Count.Should().Be(2);
@@ -30,7 +30,7 @@ namespace BraviChessReact.TestMSTest.Controllers
             var controller = new KnightMovementController();
 
             // Act
-            var result = controller.Teste("E4").ToList();
+            var result = controller.GetKnightMoves("E4").ToList();
            
             // Assert
             result.Count.Should().Be(8);
@@ -51,7 +51,7 @@ namespace BraviChessReact.TestMSTest.Controllers
             var controller = new KnightMovementController();
 
             // Act
-            var result = controller.Teste("C8").ToList();
+            var result = controller.GetKnightMoves("C8").ToList();
 
             // Assert
             result.Count.Should().Be(4);
