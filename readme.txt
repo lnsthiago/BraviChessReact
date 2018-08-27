@@ -1,7 +1,13 @@
-Foi criado um projeto de React com .net Core, React responsavel pela parte do frontend enquanto o .net Core para o backend.
+The project was created using React in front-end and .net core in back-end.
 
 React:
-Criado duas telas, uma delas para apresentar as informações do Readme e a outra tela apresentando o tabuleiro do xadrez com suas respetivas coordenadas, onde quando clicado em alguma coordenada o React faz uma requisiçao para a API, ao receber a resposta do API é destacado em vermelho as proximas possiveis posições do cavalo.
+I created two screen, one of them to show the information from Readme. The other one shows the chess board with its coordinates. Once a coordinate is clicked a request is made in the React's component to the API, as soon as it receives the response, it highlights in red the next possible turns.
 
-.net Core:
-Recebe a requisição do React com a posição atual do cavalo, processa e retorna ao React uma lista com as próximas posições permitidas para o cavalo. Foi implementado testes cobrindo o código.
+.Net Core:
+
+It receives the requested position from the knight, processes it and returns a list of the next possible turns. Some tests have been developed to cover the code.
+
+Some further development I wanted to do:
+ - A more dynamic board with React
+ - Persist the requests in some database
+ - Split front and back
