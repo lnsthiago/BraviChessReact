@@ -40,9 +40,9 @@ namespace BraviChessReact.Controllers
             if (newCoordY < 1 || newCoordY > 8)
                 return;
 
-            var xLetra = ConvertIntToLetter(newCoordX);
+            var newCoordXLetter = ConvertIntToLetter(newCoordX);
 
-            positions.Add($"{xLetra}{newCoordY}");
+            positions.Add($"{newCoordXLetter}{newCoordY}");
         }
 
         private int ConvertLetterToInt(string letter)
